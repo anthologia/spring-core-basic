@@ -69,3 +69,5 @@
 ### 7) 주문과 할인 도메인 개발
  - OrderService, DiscountPolicy 인터페이스와 구현체 작성 
  - OrderServiceImpl가 할인 정책에 의존하지 않기 때문에 단일 책임 원칙(SRP)이 잘 지켜진 것
+### 8) 주문과 할인 도메인 테스트
+ 
