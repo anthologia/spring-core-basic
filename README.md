@@ -48,4 +48,15 @@
  - 도메인 협력관계 : 기획자와의 커뮤니케이션에 사용
  - 클래스 다이어그램 : 도메인 협력관계를 구체화하여 개발자가 구현사항을 적은 것
  - 객체 다이어그램 : 구현체는 동적으로 결정되기 때문에 서버 런타임시 어떻게 돌아가는지 한 눈에 보기 위함
-
+### 4) 회원 도메인 개발
+ - 회원 Entity, Repository, Service에 대한 인터페이스와 구현체 작성
+ - HaspMap을 사용하여 MemoryMemberRepository를 구현했다. 그러나 HashMap 클래스를 살펴보면, synchronized 키워드가 존재하지 않아 Multi-Thread 환경에서 사용할 수 없다.
+   동시에 HaspMap에 접근하면, 값이 덮어씌어지는 동시성 문제가 발생하기 때문이다. 그래서 실무에서는 ConcurrentHashMap을 사용한다.
+   - ❓ ConcurrentHashMap 이란 : ConcurrentHashMap은 get() 메소드에는 synchronized가 존재하지 않고, put()에만 존재한다.
+                         이는 여러 쓰레드가 동시에 읽는 것은 가능하지만, 동시에 쓰는 것은 불가능하다는 뜻이다.
+   - ❓ 그렇다면, 어떤 방식으로 Thread-safe하게 만드는걸까? : ConcurrentHashMap은 버킷 단위로 Lock을 사용한다. 살펴보면, 아래와 같은 코드가 있다.  
+                                                     `private static final int DEFAULT_CAPACITY = 16;`  
+                                                     `private static final int DEFAULT_CONCURRENCY_LEVEL = 16;`  
+                                                     그렇기 때문에 버킷의 수와 동시 작업 가능한 쓰레드의 수가 같은 것이다.
+                                                     그래서 여러 쓰레드에서 ConcurrentHashMap에 접근하더라도, 다른 버킷을 작업하는 것이라면 경쟁이 일어나지 않는다.  
+                                                     - 참고 : [https://devlog-wjdrbs96.tistory.com/269](https://devlog-wjdrbs96.tistory.com/269)
