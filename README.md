@@ -66,3 +66,6 @@
  `private final MemberRepository memberRepository = new MemoryMemberRepository();`
 ### 6) 주문과 할인 도메인 설계
  - 회원 저장소 구현체와 할인 정책 구현체가 바뀌더라도, 기존 역할들의 협력관계를 그대로 재사용할 수 있도록 역할과 구현을 분리하여 설계
+### 7) 주문과 할인 도메인 개발
+ - OrderService, DiscountPolicy 인터페이스와 구현체 작성 
+ - OrderServiceImpl가 할인 정책에 의존하지 않기 때문에 단일 책임 원칙(SRP)이 잘 지켜진 것
