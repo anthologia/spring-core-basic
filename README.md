@@ -60,3 +60,8 @@
                                                      그렇기 때문에 버킷의 수와 동시 작업 가능한 쓰레드의 수가 같은 것이다.
                                                      그래서 여러 쓰레드에서 ConcurrentHashMap에 접근하더라도, 다른 버킷을 작업하는 것이라면 경쟁이 일어나지 않는다.  
                                                      - 참고 : [https://devlog-wjdrbs96.tistory.com/269](https://devlog-wjdrbs96.tistory.com/269)
+### 5) 회원 도메인 실행과 테스트
+ - Java 코드로 하는 테스트와 junit을 통한 단위 테스트의 차이 : 일일이 콘솔을 눈으로 확인하는 것보다는 코드를 변경할 때마다 자동적이고, 가시적으로 확인할 수 있는 junit 단위 테스트가 낫다고 느껴진다
+ - ❗️코드는 여전히 OCP, DIP 위반 중 : MemberServiceImpl은 추상화와 구체화 둘에 모두 의존하고 있기 때문이다   
+ `private final MemberRepository memberRepository = new MemoryMemberRepository();`
+ 
