@@ -64,4 +64,5 @@
  - Java 코드로 하는 테스트와 junit을 통한 단위 테스트의 차이 : 일일이 콘솔을 눈으로 확인하는 것보다는 코드를 변경할 때마다 자동적이고, 가시적으로 확인할 수 있는 junit 단위 테스트가 낫다고 느껴진다
  - ❗️코드는 여전히 OCP, DIP 위반 중 : MemberServiceImpl은 추상화와 구체화 둘에 모두 의존하고 있기 때문이다   
  `private final MemberRepository memberRepository = new MemoryMemberRepository();`
- 
+### 6) 주문과 할인 도메인 설계
+ - 회원 저장소 구현체와 할인 정책 구현체가 바뀌더라도, 기존 역할들의 협력관계를 그대로 재사용할 수 있도록 역할과 구현을 분리하여 설계
