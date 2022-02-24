@@ -122,3 +122,6 @@
  - `getRole()`을 사용한 Bean 구분
    - ROLE_APPLICATION : 직접 등록한 애플리케이션 Bean 
    - Role ROLE_INFRASTRUCTURE : 스프링이 내부에서 사용하는 Bean
+### 3) 스프링 빈 조회 - 기본
+ - `ac.getBean(MemberService.class)`와 같이 타입만으로 Bean 조회
+ - 실패하는 테스트 역시 필요하다. 이는 `assertThrows()`를 주로 사용한다.
