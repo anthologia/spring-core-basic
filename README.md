@@ -125,3 +125,5 @@
 ### 3) 스프링 빈 조회 - 기본
  - `ac.getBean(MemberService.class)`와 같이 타입만으로 Bean 조회
  - 실패하는 테스트 역시 필요하다. 이는 `assertThrows()`를 주로 사용한다.
+### 4) 스프링 빈 조회 - 동일한 타입이 둘 이상
+ - `ac.getBeansOfType(Class)`를 사용하면 해당 타입의 모든 Bean을 조회할 수 있다
