@@ -15,9 +15,7 @@ public class AppConfig {
         return new MemoryMemberRepository();
     }
 
-    public DiscountPolicy discountPolicy() {
-        return new FixDiscountPolicy();
-    }
+    public DiscountPolicy discountPolicy() { return new RateDiscountPolicy(); }
 
     public MemberService memberService() {
         return new MemberServiceImpl(MemberRepository());
