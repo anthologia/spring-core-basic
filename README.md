@@ -87,3 +87,8 @@
  - 앞에서 구현한 AppConfig의 중복 제거와 역할에 따른 구현 분리
 ### 5) 새로운 구조와 할인 정책 적용
  - AppConfig로 인해 사용영역과 구성영역의 분리가 가능해짐
+### 6) 전체 흐름 정리
+### 7) 좋은 객체 지향 설계의 5가지 원칙의 적용
+ - SRP : OrderServiceImpl 클라이언트에서 구현체 의존를 제거하여 SRP 적용
+ - DIP : AppConfig에서 OrderServiceImpl로 구현체를 DI함으로써 DIP 적용
+ - OCP : DiscountPolicy 구현체가 바뀌어도 OrderServiceImpl 코드 수정이 필요하지 않으므로 OCP 적용
