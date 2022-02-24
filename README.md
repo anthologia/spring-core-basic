@@ -105,12 +105,20 @@
    : AppConfig와 같이 객체를 생성하고 관리하면서 의존관계를 연결해주는 것
 ### 9) 스프링으로 전환하기
  - `@Configuration`을 사용하여 AppConfig를 스프링 컨테이너의 설정 정보로 등록
- - `@Bean`을 사용하여 각 메서드를 스프링 컨테이너에 스프링 빈으로 등록
+ - `@Bean`을 사용하여 각 메서드를 스프링 컨테이너에 스프링 Bean으로 등록
  - 스프링 컨테이너란, ApplicationContext 를 말한다
- - 스프링 빈은 `applicationContext.getBean()` 메서드를 통해 찾을 수 있다
+ - 스프링 Bean은 `applicationContext.getBean()` 메서드를 통해 찾을 수 있다
 
 ## 4. 스프링 컨테이너와 스프링 빈
 ### 1) 스프링 컨테이너 생성
  - 스프링 컨테이너인 ApplicationContext는 인터페이스로, 여러 구현체를 담을 수 있다. 여기서는 자바 설정 클래스를 기반으로 `AnnotationConfigApplicationContext` 구현체를 사용하였다.
  - 스프링 컨테이너를 생성할 때는 구성 정보(Ex, AppConfig) 지정이 필요하다
- - ❗[TIP 2] : 스프링 빈은 항상 다른 이름을 부여해야 한다
+ - ❗[TIP 2] : 스프링 Bean은 항상 다른 이름을 부여해야 한다
+### 2) 컨테이너에 등록된 모든 빈 조회
+ - `ac.getBeanDefinitionNames()`을 통한 모든 Bean의 이름 조회
+ - `ac.getBean()`을 사용하여 빈 이름으로 Bean 인스턴스 조회
+   - `getBean(Name, Class)`로 호출하는 경우에는 정확하게 Class에 맞는 Bean 인스턴스가 반환이 되지만,
+     `getBean(Name)`은 Name 이름을 가진 Bean 인스턴스를 반환하므로 Object에 담는 것이 좋다.
+ - `getRole()`을 사용한 Bean 구분
+   - ROLE_APPLICATION : 직접 등록한 애플리케이션 Bean 
+   - Role ROLE_INFRASTRUCTURE : 스프링이 내부에서 사용하는 Bean
