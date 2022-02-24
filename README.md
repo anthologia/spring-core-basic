@@ -108,3 +108,9 @@
  - `@Bean`을 사용하여 각 메서드를 스프링 컨테이너에 스프링 빈으로 등록
  - 스프링 컨테이너란, ApplicationContext 를 말한다
  - 스프링 빈은 `applicationContext.getBean()` 메서드를 통해 찾을 수 있다
+
+## 4. 스프링 컨테이너와 스프링 빈
+### 1) 스프링 컨테이너 생성
+ - 스프링 컨테이너인 ApplicationContext는 인터페이스로, 여러 구현체를 담을 수 있다. 여기서는 자바 설정 클래스를 기반으로 `AnnotationConfigApplicationContext` 구현체를 사용하였다.
+ - 스프링 컨테이너를 생성할 때는 구성 정보(Ex, AppConfig) 지정이 필요하다
+ - ❗[TIP 2] : 스프링 빈은 항상 다른 이름을 부여해야 한다
