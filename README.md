@@ -92,3 +92,14 @@
  - SRP : OrderServiceImpl 클라이언트에서 구현체 의존를 제거하여 SRP 적용
  - DIP : AppConfig에서 OrderServiceImpl로 구현체를 DI함으로써 DIP 적용
  - OCP : DiscountPolicy 구현체가 바뀌어도 OrderServiceImpl 코드 수정이 필요하지 않으므로 OCP 적용
+### 8) IoC, DI, 그리고 컨테이너
+ - **제어의 역전 IoC(Inversion of Control)**  
+   : 프로그램의 제어 흐름을 직접 제어하는 것이 아니라 외부에서 관리하는 것
+   - 프로그램에 대한 제어 흐름을 OrderServiceImpl 클라이언트가 아닌, AppConfig가 가진다
+ - **의존관계 주입 DI(Dependency Injection)**  
+   : 애플리케이션 런타임때, 외부에서 실제 구현 객체를 생성하고 클라이언트에 전달해서 클라이언트와 서버의 실제 의존관계가 연결 되는 것
+   - ❗[TIP 1] : 의존관계는 정적인 클래스 의존관계와, 실행 시점에서 결정되는 동적인 인스턴스 의존관계를 분리해서 생각해야 한다
+     - 정적인 클래스 의존관계 : 클래스 다이어그램. 클래스가 사용하는 import code만 보고도 판단 가능
+     - 동적인 인스턴스 의존관계 : 애플리케이션 실행 시점에 실제 생성된 객체 인스턴스의 참조가 연결된 의존관계
+ - **IoC 컨테이너 / DI 컨테이너**  
+   : AppConfig와 같이 객체를 생성하고 관리하면서 의존관계를 연결해주는 것
