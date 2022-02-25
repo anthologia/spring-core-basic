@@ -129,3 +129,7 @@
  - `ac.getBeansOfType(Class)`를 사용하면 해당 타입의 모든 Bean을 조회할 수 있다
 ### 5) 스프링 빈 조회 - 상속 관계
  - 부모 타입으로 조회하면, 자식 타입도 함께 조회한다
+### 6) BeanFactory와 ApplicationContext
+ - BeanFactory는 스프링 컨테이너의 최상의 인터페이스다
+ - ApplicationContext는 BeanFactory의 모든 기능을 상속 받아서 제공한다.
+   그 외에 MessageSource, EnviromentCapable, ApplicationPulisher, ResourceLoader의 기능도 상속 받아서 제공한다.
