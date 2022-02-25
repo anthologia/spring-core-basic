@@ -133,3 +133,6 @@
  - BeanFactory는 스프링 컨테이너의 최상의 인터페이스다
  - ApplicationContext는 BeanFactory의 모든 기능을 상속 받아서 제공한다.
    그 외에 MessageSource, EnviromentCapable, ApplicationPulisher, ResourceLoader의 기능도 상속 받아서 제공한다.
+### 7) 다양한 성정 형식 지원 - 자바 코드, XML
+ - XML을 통한 스프링 컨테이너 설정
+   - `GenericXmlApplicationContext`를 사용해 resources/appConfig.xml 를 넘겨주면 된다 
