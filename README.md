@@ -136,3 +136,8 @@
 ### 7) 다양한 성정 형식 지원 - 자바 코드, XML
  - XML을 통한 스프링 컨테이너 설정
    - `GenericXmlApplicationContext`를 사용해 resources/appConfig.xml 를 넘겨주면 된다 
+### 8) 스프링 빈 설정 메타 정보 - BeanDefinition
+ - 설정 형식을 유연하게 지원 가능한 이유는 BeanDeifinition이 추상이기 때문이다. 스프링은 XML 혹은 자바 코드를 읽어서 BeanDefinition을 만든다.  
+   (이렇게 만들어진 BeanDeifinition은 factoryBean을 통해 만들었다고 한다.)  
+ - 그래서 BeanDefinition을 Bean 설정 메타정보라고 한다. 스프링 컨테이너는 이 Bean 설정 메타정보를 기반으로 스프링 Bean을 생성한다.
+ - factoryBean을 통해 만드는 것 외에도 직접 BeanDefinition을 정의하여 사용하는 것도 가능하지만, 이는 스프링 내부 코드나 스프링 관련 오픈소스에서나 사용된다.
