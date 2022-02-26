@@ -162,3 +162,6 @@
    - 필드 대신 공유되지 않는 지역변수, 파라미터, ThreadLocal 사용
 ### 5) @Configuration과 싱글톤
  - 스프링은 @Configuration에서 만들어진 스프링 Bean에게 어떻게든 싱글톤을 보장한다
+### 6) @Configuration과 바이트코드 조작의 마법
+ - @Configuration가 스프링 Bean에게 싱글톤을 보장하는 방법은 바이트코드 조작 라이브러리인 CGLIB를 사용하기 때문이다. CGLIB를 통해 AppConfig를 조작하여 새로운 AppConfig를 만들어 싱글톤을 보장한다.
+ - 그래서 @Configuration없이 등록된 스프링 Bean은 추가적인 코드 없이는 싱글톤 보장이 되지 않는다
