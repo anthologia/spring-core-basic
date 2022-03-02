@@ -165,3 +165,10 @@
 ### 6) @Configuration과 바이트코드 조작의 마법
  - @Configuration가 스프링 Bean에게 싱글톤을 보장하는 방법은 바이트코드 조작 라이브러리인 CGLIB를 사용하기 때문이다. CGLIB를 통해 AppConfig를 조작하여 새로운 AppConfig를 만들어 싱글톤을 보장한다.
  - 그래서 @Configuration없이 등록된 스프링 Bean은 추가적인 코드 없이는 싱글톤 보장이 되지 않는다
+
+## 6. 컴포넌트 스캔
+### 1) 컴포넌트 스캔과 의존관계 자동 주입 시작하기
+ - `@ComponentScan`과 `@Component`를 사용한 컴포넌트 스캔
+   - `excludeFilters`를 사용하여 특정 클래스를 컴포넌트 스캔에서 배제
+ - `@Autowired`를 사용한 의존관계 주입
+   - 스프링 컨테이너가 자동으로 타입이 같은 스프링 빈을 찾아서 주입한다
