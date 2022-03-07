@@ -213,3 +213,7 @@
 ### 4) 롬복과 최신 트랜드
  - Lombok 라이브러리 적용
  - `@RequiredArgsConstructor`를 사용한 final 필드 생성자 자동 생성
+### 5) 조회 빈이 2개 이상 - 문제
+ - `@Autowired`는 스프링 빈을 타입으로 조회한다. 그래서 등록된 같은 타입의 빈이 2개 이상이면, NoUniqueBeanDefinitionException이 발생한다. 
+    하위 구현체를 지정하는 방법은 DIP를 위반하기 때문에 다른 방법을 찾아야 한다
+
