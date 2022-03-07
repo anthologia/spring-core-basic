@@ -216,4 +216,11 @@
 ### 5) 조회 빈이 2개 이상 - 문제
  - `@Autowired`는 스프링 빈을 타입으로 조회한다. 그래서 등록된 같은 타입의 빈이 2개 이상이면, NoUniqueBeanDefinitionException이 발생한다. 
     하위 구현체를 지정하는 방법은 DIP를 위반하기 때문에 다른 방법을 찾아야 한다
-
+### 6) @Autowired 필드 명, @Qualifier, @Primary
+ - @Autowired 필드명 매칭
+   - 타입 매칭의 결과가 2개 이상일 때, 필드 명, 파라미터 명으로 이름 매칭
+ - @Qualifier 사용
+   - @Qualifier 끼리 매칭
+   - Bean 이름 매칭
+ - @Primary 사용
+ - ❗[TIP 8] 스프링은 자동보다는 수동이, 넓은 범위보다는 좁은 범위의 선택권이 우선 순위가 높다
